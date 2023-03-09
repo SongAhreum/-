@@ -29,6 +29,11 @@ public interface PostDAO {
 	//글지우기
 	public int deletePost(int id);
 	//글수정하기
-	public int updatePost(int id,int userId,String subject,String content,String imagePath); 
+	public int updatePost(
+			@Param("id") int id,
+			@Param("userId") int userId,
+			@Param("subject") String subject,
+			@Param("content") String content,
+			@Param("imagePath") String imagePath); 
 
 }

@@ -72,8 +72,7 @@
 			,`imagePath` = #{imagePath}
 			,`updatedAt` = NOW() 
 		WHERE
-			`id` = #{id}   
-	 	
+			`id` = #{id}   	 	
  	</update>
  	<delete id="deletePost" parameterType="int">
  		DELETE FROM

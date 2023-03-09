@@ -29,8 +29,7 @@
 		$("#post-update-btn").on('click',function(){
 			let id = ${post.id};
 			let subject = $('#subject').val().trim();
-			let content = $('#content').val();
-			alert(content);			
+			let content = $('#content').val();		
 			let file = $('#file').val();
 			//유효성검사
 			if(subject == ""){
