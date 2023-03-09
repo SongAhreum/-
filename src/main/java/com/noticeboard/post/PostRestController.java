@@ -55,7 +55,8 @@ public class PostRestController {
 	
 	//글 삭제하기
 	@DeleteMapping("/delete")
-	public Map<String,Object> postDelete(int id) {
+	public Map<String,Object> postDelete(int id,HttpSession session) {
+		int userId = Integer.valueOf(String.valueOf(session.getAttribute("userId")));
 		Map<String,Object> result= new HashMap<>();
 		//db delete
 		int row = postBO.removePost(id);

@@ -16,7 +16,9 @@
 	<hr>
 	<div class="content-box">${post.content}</div>
 	<hr>
-	<div>사진</div>
+	<div>
+		<img alt="이미지불러오기" src="">
+	</div>
 	<hr><hr>
 	<div class="comment-box">
 		<button type="block" class="comment-box form-control d-flex justify-content-start" >댓글</button>

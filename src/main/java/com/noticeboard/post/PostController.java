@@ -56,7 +56,6 @@ public class PostController {
 		 
 		//로그인정보
 		int userId = Integer.valueOf(String.valueOf(session.getAttribute("userId")));
-		String userLoginId = String.valueOf(session.getAttribute("userLoginId"));
 		//선택한 글정보 post에담기		
 		Post post =  postBO.getPostBYPostId(postId);
 		model.addAttribute("post", post);
