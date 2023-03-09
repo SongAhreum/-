@@ -43,7 +43,11 @@ public class CommentRestController {
 		return result;
 	}
 	
-	//댓글삭제하기
+	/**
+	 * 댓글 삭제하기
+	 * @param id
+	 * @return
+	 */
 	@DeleteMapping("/delete_comment")
 	public Map<String,Object> removeComment(int id){
 		Map<String,Object> result= new HashMap<>();

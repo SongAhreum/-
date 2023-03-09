@@ -53,7 +53,12 @@ public class PostRestController {
 		return result;
 	}
 	
-	//글 삭제하기
+	/**
+	 * post 글 삭제하기
+	 * @param id
+	 * @param session
+	 * @return
+	 */
 	@DeleteMapping("/delete")
 	public Map<String,Object> postDelete(int id,HttpSession session) {
 		int userId = Integer.valueOf(String.valueOf(session.getAttribute("userId")));
@@ -72,7 +77,15 @@ public class PostRestController {
 		}
 		return result;
 	}
-	//글수정하기
+	/**
+	 * post 글 수정하기
+	 * @param id
+	 * @param subject
+	 * @param content
+	 * @param file
+	 * @param session
+	 * @return
+	 */
 	@PutMapping("/update")
 	public Map<String,Object> postUpdate(
 			@RequestParam("id") int id,

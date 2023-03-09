@@ -16,9 +16,12 @@
 	<hr>
 	<div class="content-box">${post.content}</div>
 	<hr>
-	<div>
-		<img alt="이미지불러오기" src="">
-	</div>
+	<c:if test="${not empty post.imagePath}">
+		<div class="mt-3">
+			<img src="${post.imagePath}" alt="업로드 이미지" width="300">
+		</div>
+	</c:if>
+
 	<hr><hr>
 	<div class="comment-box">
 		<button type="block" class="comment-box form-control d-flex justify-content-start" >댓글</button>
