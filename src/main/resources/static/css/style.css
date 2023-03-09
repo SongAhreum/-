@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.header-box{height:100px; background-color:#B0C4DE}
+.contents {min-height:500px;}
+.footer-box{height:100px;background-color:#B0C4DE}
+.sign-up-table th {background:#D8D8D8;}
+.post-list-table th {background:#D8D8D8;}
+.logo {color:#000000;}
+.logo:hover{text-decoration:none;color:#9999;}
+table{width:800px;}
+.content-box{height:300px;}
+.box{text-decoration: none; color:black;}
+.box:hover{background-color:#d9d9d9; color: #d9d9d9;text-decoration: none;}
+.comment-box:active, .comment-box:focus {
+outline:none !important;
+box-shadow:none !important; }
+.comment-box{background-color:#d9d9d9;}

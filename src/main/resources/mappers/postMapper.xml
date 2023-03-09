@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.noticeboard.post.dao.PostDAO">
+ 	<select id="selectPost" resultType="com.noticeboard.vo.PostUser">			
+ 		SELECT
+			A.*,B.loginId
+			FROM `post` as A
+			JOIN `user` as B
+			ON A.userId = B.id	
+ 	</select>
+ 	<select id="selectMyPost" resultType="com.noticeboard.post.model.Post">
+ 		SELECT
+ 			`id`
+			,`userId`
+			,`subject`
+			,`content`
+			,`imagePath`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM
+ 			`post`
+ 		WHERE
+ 			`userId`=#{userId}	
+ 	</select> 	
+ 	<select id="selectPostBYPostId" resultType="com.noticeboard.post.model.Post" parameterType="int">
+ 		SELECT
+ 			`id`
+			,`userId`
+			,`subject`
+			,`content`
+			,`imagePath`
+			,`createdAt`
+			,`updatedAt`
+ 		FROM
+ 			`post`
+ 		WHERE
+ 			`id`=#{postId}	
+ 	</select>
+ 	<select id="selectComment" resultType="com.noticeboard.vo.CommentUser" parameterType="int"> 					
+ 		SELECT
+			A.*,B.loginId
+		FROM `comment` as A
+		JOIN `user` as B
+		ON A.userId = B.id	
+		WHERE
+ 			A.postId=#{postId}			
+ 	</select>
+ 	<insert id="insertPost" parameterType="map">
+ 		INSERT INTO `post`(
+ 			`userId`
+			,`subject`
+			,`content`
+			,`imagePath`
+			,`createdAt`
+			,`updatedAt`
+ 			)
+ 		VALUES( 		
+			#{userId}
+			,#{subject}
+			,#{content}
+			,#{imagePath}
+			,NOW()
+			,NOW()
+ 			)		
+ 	</insert>
+ 	<update id="updatePost" parameterType="map">
+	 	UPDATE `post`
+		SET 
+			`subject` = #{subject}
+			,`content` = #{content}
+			,`imagePath` = #{imagePath}
+			,`updatedAt` = NOW() 
+		WHERE
+			`id` = #{id}   
+	 	
+ 	</update>
+ 	<delete id="deletePost" parameterType="int">
+ 		DELETE FROM
+ 			`post`
+ 		WHERE
+ 			`id` = #{id};	
+ 	</delete>
+ </mapper>
