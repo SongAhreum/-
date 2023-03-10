@@ -61,7 +61,7 @@ public class PostController {
 		model.addAttribute("post", post);
 		
 		
-		//내가쓴글인지 아닌지
+		//내가쓴글인지 아닌지 //필터에 로직넣기
 		//String으로 타입바꾼후 비교-> ==를 equals로
 		if(userId == post.getUserId()) {
 			model.addAttribute("isMyPost",true);
@@ -89,7 +89,7 @@ public class PostController {
 			HttpSession session,
 			Model model) {
 		int userId = Integer.valueOf(String.valueOf(session.getAttribute("userId")));
-		String userLoginId = (String)session.getAttribute("userLoginId");		
+		//String userLoginId = (String)session.getAttribute("userLoginId");		
 		
 		List<Post> postMyList =postBO.getMyPost((userId));
 		model.addAttribute("postMyList", postMyList);

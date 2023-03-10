@@ -19,7 +19,7 @@ public class EncryptUtils {
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
-		return encData; //해싱된 값 보포화?는안됨
+		return encData; //해싱된 값 복호화?는안됨
 	}
 	
 }
