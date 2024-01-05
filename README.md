@@ -6,7 +6,7 @@
 - config 패키지
     - db설정 클래스
 - Controller,BO(@Service),DAO(@Repository),model 로구성
-- db join하여 들고온 data → vo 를 dto처럼 사용?
+- (dao,bo,model,vo 구조 수정해야함)
 - *URL, API Controller 분리(Controller, RestControlle*r)
 
 ### JSP
